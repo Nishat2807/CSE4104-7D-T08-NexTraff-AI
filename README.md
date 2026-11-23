@@ -1,4 +1,5 @@
 # NexTraff AI
+
 ### An AI-Powered Traffic Monitoring and Congestion Analysis System
 
 ## 1. Project Overview
@@ -60,11 +61,13 @@ Real-time traffic monitoring through live CCTV cameras and automatic traffic sig
 The system will mainly support two types of users:
 
 **Visitor:**
+
 - View general project information.
 - Access registration and login pages.
 - Create a new account.
 
 **Registered User:**
+
 - Log in to the system.
 - Upload traffic videos.
 - Start video analysis.
@@ -88,24 +91,100 @@ The system will mainly support two types of users:
 
 This project is being developed as part of the Software Development III (CSE 4104) course.
 
-## 10. Repository Structure
+## 10. System Design
 
-The project repository will be organized into separate sections for frontend, backend, AI processing, and documentation as development progresses.
+The system design of NexTraff AI defines the overall structure of the application, database organization, user interactions, system workflow, planned API endpoints, and AI integration process.
 
-Example structure:
+The following design components have been prepared:
+
+- System Architecture Diagram.
+- Entity Relationship (ER) Diagram.
+- Updated Use Case Diagram.
+- Activity Diagram.
+- API Design Document.
+- AI Integration Workflow.
+
+These design documents will guide the development and implementation of the project.
+
+### System Architecture
+
+The proposed system follows a modular architecture consisting of four main components:
+
+- **Frontend:** React.js web application for user interaction.
+- **Backend:** Node.js and Express.js for handling requests and application logic.
+- **Database:** PostgreSQL for storing user information, uploaded video references, and analysis results.
+- **AI Service:** Python with a pretrained YOLO model for vehicle detection and classification.
+
+### Database Design
+
+The database is designed to manage users, uploaded videos, traffic analysis records, vehicle counts, and congestion results.
+
+### AI Integration
+
+The project uses a pretrained YOLO object detection model through a Python-based AI service. Uploaded traffic videos are processed to detect and classify vehicles. The system then calculates vehicle counts and estimates congestion levels as Low, Medium, or High.
+
+## 11. API Design
+
+The proposed API endpoints are organized into the following categories:
+
+**Authentication APIs:**
+
+- POST `/api/auth/register`
+- POST `/api/auth/login`
+- POST `/api/auth/logout`
+
+**User APIs:**
+
+- GET `/api/users/profile`
+- PUT `/api/users/profile`
+
+**Video APIs:**
+
+- POST `/api/videos/upload`
+- GET `/api/videos/{videoId}`
+
+**AI Analysis APIs:**
+
+- POST `/api/analysis/{videoId}/process`
+- GET `/api/analysis/{analysisId}`
+- GET `/api/analysis/history`
+
+These endpoints are planned to support user authentication, video uploading, AI-based analysis, and retrieval of previous analysis results.
+
+## 12. Project Documentation
+
+The project documentation includes the System Design Document and related diagrams.
+
+The documentation covers:
+
+- Project Information.
+- System Architecture.
+- Database Design.
+- Use Case Diagram.
+- Activity Diagram.
+- API Design.
+- AI Integration Workflow.
+- References.
+
+The documentation files are maintained in the `documentation/` and `diagrams/` folders.
+
+## 13. Repository Structure
+
+The project repository is organized into separate folders for frontend development, backend development, database design, documentation, and system diagrams.
 
 ```text
 CSE4104-7D-T08-NexTraff-AI/
 │
 ├── frontend/
 ├── backend/
-├── ai-module/
-├── docs/
+├── database/
+├── documentation/
+├── diagrams/
 ├── README.md
 └── .gitignore
 ```
 
-## 11. Team Information
+## 14. Team Information
 
 | Name | Student ID |
 |---|---|
@@ -117,11 +196,13 @@ CSE4104-7D-T08-NexTraff-AI/
 **Course:** Software Development III  
 **Course Code:** CSE4104  
 **Section:** 7D  
-**Team Name:** CSE4104-7D-T08
+**Team Name:** CSE4104-7D-T08  
+**Team Leader:** Nishat Tamanna Joly
 
-## 12. Repository
+## 15. Repository
 
-**GitHub Repository:**  
+**GitHub Repository:**
+
 https://github.com/Nishat2807/CSE4104-7D-T08-NexTraff-AI
 
 ---
